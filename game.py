@@ -1,8 +1,11 @@
+from exceptions import EnemyDown
 from exceptions import GameOver
+from models import Enemy
 from models import Player
+import settings
 
 
-if name == '__main__':
+if __name__ == '__main__':
     result = None
     try:
         play()
@@ -14,7 +17,7 @@ if name == '__main__':
         print('Good Bye')
 
 def play():
-    player_name = print(str(input("Enter your name: ")))
+    player_name = (input("Enter your name: ")
     player = Player(player_name)
     enemy = Enemy(level=1)
     print('Hello', player_name, "please enter command 'START' to start the game")

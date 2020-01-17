@@ -1,15 +1,17 @@
-import random
+import choince from random
+from exceptions import EnemyDown
+from exceptions import GameOver
+import settings
 
 
 class Enemy:
-
     def __init__(self, level, lives):
         self.level = level
         self.lives = level
 
     @staticmethod
     def select_attack():
-        pass
+        return int(choince('123'))
 
     def decrease_lives(self):
         self.level -= 1
@@ -18,9 +20,11 @@ class Enemy:
         return self.level
 
 class Player:
-
     def __init__(self, name, lives, score, allowed_attacks):
-        pass
+        self.name = player_name
+        self.lives = end_lives
+        self.score = 0
+        self.allowed_attacks = allowed_attacks
 
     @staticmethod
     def fight(attack, defense):
