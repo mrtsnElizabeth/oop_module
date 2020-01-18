@@ -48,7 +48,7 @@ class Player:
             raise GameOver(self)
         return self.lives
 
-    def attack(self, enemy_obj):
+    def attack(self):
         player_choise = int(input("You can choise 1, 2 or 3 to attack: "))
         enemy_attack = Enemy.select_attack()
         if Player.fight(enemy_attack, player_choise) == 0:
