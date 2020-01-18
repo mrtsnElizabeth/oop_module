@@ -10,9 +10,19 @@ def play():
     level = 1
     enemy = Enemy(1)
 
+    print(str("Choose your Player: 1 - MAG, 2 - WARRIOR, 3 - ROGUE"))
+              pl_char = int(input())
+              if pl_char == 1:
+                  print('Your Choose MAG. Good luck!')
+                  enemy_obj.decrease_lives()
+              elif pl_char == 2:
+                  print("Your Choose WARRIOR. Good luck!")
+              elif pl_char == 3:
+                  print("Your Choose ROGUE. Good luck!")
+
     print('Hello', player_name, "please enter command 'START' to start the game.")
     start = str(input())
-    Player(start)
+    player = Player(start)
     if start == "START":
         try:
             player.attack(enemy)

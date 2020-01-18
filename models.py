@@ -49,7 +49,7 @@ class Player:
         return self.lives
 
     def attack(self, enemy_obj):
-        player_choise = int(input("You can choise 1, 2 or 3: "))
+        player_choise = int(input("You can choise 1, 2 or 3 to attack: "))
         enemy_attack = Enemy.select_attack()
         if Player.fight(enemy_attack, player_choise) == 0:
             print("It's a draw!")
@@ -60,22 +60,12 @@ class Player:
             print("You missed!")
 
     def defence(self, enemy_obj):
+        player_choise = int(input("You can choise 1, 2 or 3 to defence: "))
         enemy_attack = enemy_obj.select_attack()
         if Player.fight(enemy_attack, player_choise) == 0:
             print("It's a draw!")
             self.decrease_lives()
         elif Player.fight(enemy_attack, player_choise) == 1:
-            print("You attacked successfully!")
+            print("Enemy attacked successfully!")
         else:
-            print("You missed!")
-
-
-  # print(str("Choose your Player: 1 - MAG, 2 - WARRIOR, 3 - ROGUE"))
-  #           player_choused = int(input())
-  #           if hero == 1:
-  #               print('Your Choose MAG. Good luck!')
-  #               enemy_obj.decrease_lives()
-  #           elif hero == 2:
-  #               print("Your Choose WARRIOR. Good luck!")
-  #           elif hero == 3:
-  #               print("Your Choose ROGUE. Good luck!")
+            print("Enemy missed!")
